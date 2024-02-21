@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+$font-family-sans-serif: 'Roboto Slab', sans-serif !default;
+$presentation-heading-font: 'Roboto Slab', sans-serif !default;
+$presentation-block-margin: 10px !default;
+$presentation-slide-text-align: justify !default;
+$presentation-font-size-root: 27px !default;
+/*-- scss:rules --*/
+
+.reveal .universidade{
+  position: absolute;
+   bottom: 5em;
+   left:   30px;
+   height: 200px;
+   width: 110px;
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-image: url("ufam.jpg");
+}
+
+.reveal .programa{
+  position: absolute;
+  bottom: 5em;
+  right:   30px;
+  height: 190px;
+  width: 210px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("icomp.png");
+}
+
+
+h3{
+    color: #23373B !important;
+  }
+  .quarto-title-affiliation {
+    font-size: 27px !important;
+    position: relative;
+    bottom: 17em;
+  
+}
+.reveal .subtitle{
+  position: relative;
+  top: 10em;
+}
+.quarto-title-author-name {
+  position: relative;
+  top: 10em;
+
+}
+
+.reveal .title {
+  font-size: 50px !important;
+  color: #FAFAFA;
+  border-radius: 25px;
+  border: 20px solid #23373B;
+  background-color: #23373B;
+  position: relative;
+  top: 5em;
+}
+figcaption{
+  text-align: center !important;
+
+}
+section.slide h2 {
+    font-size: 40px !important;
+    color:#FAFAFA !important;
+    border: 20px solid #23373B; /* Define a espessura, o estilo e a cor da borda */
+    background-color: #23373B;
+
+  
+
+    
+  }
+
+
+  .reveal .progress {
+    background: rgba(0, 0, 0, 0.2);
+    color: #23373B;
+  }
+
+
+
+
+ .reveal .slide-number {
+  color: #23373B;
+}
+
+
+
+h4{
+  margin-left:30px !important;
+
+}
+h3
+{
+  margin-left:30px !important;
+
+}
+
+li{
+  margin-left:30px !important;
+
+}
+
+
+p{
+  margin-left:30px !important;
+  margin-right: 30px !important;
+
+}
+

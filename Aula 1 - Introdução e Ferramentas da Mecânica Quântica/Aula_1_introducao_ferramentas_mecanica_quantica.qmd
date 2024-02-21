@@ -1,0 +1,528 @@
+---
+title: Introdução à Mecânica Quântica e a Programação Quântica []{.universidade} []{.programa}
+subtitle: "**Disciplina:** Tópicos Especiais em Computação II"
+institute:
+    - Universidade Federal do Amazonas
+    - Pró-Reitoria de Pesquisa e Pós-Graduação
+    - Programa de Pós-Graduação em Informática
+
+author:
+    - "Profª: Dra. Rosiane de Freitas Rodrigues<br>[(rosiane@icomp.ufam.edu.br)](rosiane@icomp.ufam.edu.br)<br><br> Estágio em Docência II: Geyson Maquiné Batalha<br> [(geyson.batalha@icomp.ufam.edu.br)](geyson.batalha@icomp.ufam.edu.br)"
+
+lang: pt
+bibliography: ref.bib
+csl: abnt.csl
+format: 
+    revealjs:
+        slide-number: c/t
+        theme: [tema.scss]
+        width: 1600
+        height: 900
+        fig-cap-location: top
+        code-fold: true
+        margin: 0
+
+---
+
+## Física Clássica X Física Quântica
+
+::: columns
+::: {.column style="font-size:30px; width=50%"}
+### Clássico
+
+-   Fenômenos Determinísticos
+
+-   Nível Atômico ou Macroscópico <br> ![](img/classical_quantum.jpg){width="400px" fig-align="center"}
+:::
+
+::: {.column style="font-size:30px; width=50%"}
+### Quântico
+
+-   Fenômenos Não-Determinísticos (Probabílisticos)
+-   Nivel Subatômico (Onda-Partícula)
+    -   Bósons (Ex: Fótons)
+    -   Férmions (Ex: Elétrons, Nêutrons)
+    - Anyons 
+![](img/sub.png){width="600px" fig-align="center"}
+:::
+:::
+
+## Contribuições Teóricas
+
+
+- Paul @Benioff_1980 descreve o primeiro modelo quântico da máquina de Turing.
+
+- Richard @Feynman_1982 descreve um modelo de processador universal capaz de simular sistemas quânticos.
+
+- David @deutsch1985 apresenta a ideia de um computador quântico universal, que seria capaz de simular qualquer processo físico, incluindo quântico e clássico.
+
+ - David Deutsch e Richard Jozsa  [-@jozsa1992]  apresentaram o primeiro algoritmo quântico exponencialmente mais rápido que seu análogo clássico.
+
+ - Peter Shor [-@Shor] apresentou um algoritmo quântico capaz de fatorar um número com muitos dígitos rapidamente.
+
+
+-  Lov Grover [-@Grover_1996]  desenvolveu um algoritmo de busca de dados não estruturados em uma velocidade maior que a desempenhada pelos algoritmos clássicos.
+
+::: {layout-ncol=6}
+![Paul Benioff (1930-2022)](img/benioff.jpeg){width=200px}
+
+![Richard Feynman (1918-1988)](img/feynman.jpg){width="130px"}
+
+![David Deutsch (1953-)](img/david.jpg){width="130px"}
+
+![Richard Jozsa (1953-)](img/jozsa.jpeg){width="150px"}
+
+![Peter Shor (1959-)](img/shor.jpg){width="250px"}
+
+![Lov Kumar Grover (1961-)](img/grover.jpg){width="250px"}
+
+:::
+
+
+## Contribuições Práticas
+
+- Jonathan A. Jones e Michele Mosca [-@Jones_1998] apresentaram o primeiro computador quântico com 2 qubits. 
+
+- D-Wave ([2011](https://thequantuminsider.com/2022/07/01/d-wave-quantum-computer/)) apresenta o primeiro computador quântico adiabático (D-Wave One) com 128 qubits.
+
+- IBM ([2016](https://www.businessinsider.com/ibm-launches-first-quantum-computer-cloud-service-2016-5)) libera o acesso público de 5 qubits do seu computador quântico pela plataforma IBM Quantum Experience. 
+- Intel ([2018](https://spectrum.ieee.org/intels-49qubit-chip-aims-for-quantum-supremacy)) anuncia o chip quântico Tangle Lake com 49 qubits. Google ([2018](https://blog.research.google/2018/03/a-preview-of-bristlecone-googles-new.html?m=1)) apresenta seu processador Bristlecone com 72 qubits.
+
+- Google ([2019](https://www.inovacaotecnologica.com.br/noticias/noticia.php?artigo=google-afirma-ter-atingido-supremacia-quantica-ibm-contesta&id=010150191023)) afirma ter coneguido atingir a supremacia quântica por ter coseguido resolver um problema que levaria 10000 anos no computador clássico em 200 segundos  utilizando seu processador Sycamore de 54 qubits. Porém, pesquisadores ([2021]( https://arxiv.org/abs/2111.03011
+)) conseguiram resolver o mesmo problema em 15 horas, reformulando o algoritmo como uma rede tensorial 3D e executado-o em um supercomputador de 512 GPUs.
+
+- Atom Computing ([2023](https://atom-computing.com/quantum-startup-atom-computing-first-to-exceed-1000-qubits/)) anuncia processador quântico com 1125 qubits. Em seguida, a IBM ([2023](https://www.ibm.com/quantum/blog/quantum-roadmap-2033)) lança seu processador Condor com 1121 qubits e Heron com 133 qubits (taxa de erros menor).
+
+
+::: {layout-ncol=4}
+![D-Wave One](img/dwave.webp){width="450px" fig-align="center"}
+
+![Intel Tangle Lake](img/intel-tangle-lake.jpg){width="250px" fig-align="center"}
+
+![Google Sycamore](img/google_sys.jpg){width="350px" fig-align="center"}
+
+
+![IBM Condor e Heron](img/ibm_condor_heron.webp){width="350px" fig-align="center"}
+:::
+
+## Computadores Quânticos: Aplicações^[<https://thequantuminsider.com/2023/05/24/quantum-computing-applications/>] ^[Preskill, J. [Quantum Computing in the NISQ Era and Beyond](https://doi.org/10.22331/q-2018-08-06-79). Quantum 2018, 2, 79.]
+
+![](img/QC_Aplica%C3%A7%C3%B5es.svg){height="650px" fig-align="center"}
+
+
+## Computadores Quânticos: Tipos de Qubits^[<https://thequantuminsider.com/2023/12/29/quantum-computing-companies/>] ^[Cheng, B., Deng, XH., Gu, X. et al. [Noisy intermediate-scale quantum computers](https://doi.org/10.1007/s11467-022-1249-z). Front. Phys. 18, 21308 (2023). ]
+
+![](img/Tipos_de_Qubits.svg){height=700px fig-align="center"}
+
+
+## Mercado no Brasil
+
+- O Banco Itaú ([2019](http://broadcast.com.br/cadernos/financeiro/?id=QnFmNzEraXBGSVVlL1BvYWJkK0ZTdz09)) fecha parceria com a empresa  QC Ware, que oferece  sofware e serviços quânticos, para prever saída de clientes do Banco. Em ([2023](https://bluestudio.estadao.com.br/noticias/mercado/itau-quer-usar-computacao-quantica-para-fidelizar-clientes-e-sugerir-investimentos/)), entra na  IBM Quantum Network.
+
+
+- O Banco Bradesco ([2023](https://itforum.com.br/noticias/bradesco-ibm-criptografia-quantica/)) amplia sua parceiria com a IBM e começa a explorar a criptografia quânica. Além disso, começa ingressar na IBM Quantum Network
+
+- SENAI CIMATEC e Atos (Eviden) ([2021](https://www.senaicimatec.com.br/noticias/senai-cimatec-e-atos-lancam-o-primeiro-centro-de-computacao-quantica-no-brasil/)) inauguram o primeiro centro de pesquisa em computação quântica, o Latin America Quantum Computer Center (LAQCC), localizado em Salvador, Bahia. Além disso, é lançado o simulador quântico CIMATEC KUATOMU.
+
+:::{layout-ncol=3}
+![](img/itau.jpeg){width="550px" fig-align=center}
+
+
+![](img/bradesco.jpg){width="550px" fig-align=center}
+
+![](img/cimatec.jpeg){width="450px" fig-align=center}
+:::
+
+## A era NISQ (Noisy Intermediate Scale Quantum)
+:::: {.columns}
+
+::: {.column width=50%}
+- Termo definido por John Preskill (2018)^[Preskill, J. [Quantum Computing in the NISQ Era and Beyond](https://doi.org/10.22331/q-2018-08-06-79). Quantum 2018, 2, 79.]
+- Processadores  são sensíveis ao ambiente (ruidosos) e propensos à decoerência quântica, o que limita seu poder computacional
+- Nessa era, os algoritmos quânticos são projetados para aproveitar ao máximo os recursos limitados dos dispositivos NISQ, mas sem garantia de vantagem quântica sobre os computadores clássicos. EX:
+
+- Utilizam computadores quânticos, porém realizam alguns cálculos do computador clássico (híbrido).
+
+:::
+:::{.column style="text-align:center;font-size:20px;width=50%"}
+
+![](img/time.png){width="700px" fig-align="center"}
+
+Fonte: Adaptado de Zhang e Li (2022).^[Zhang, S.; Li, L. [A Brief Introduction to Quantum Algorithms](https://doi.org/10.1007/s42514-022-00090-3). CCF Transactions on High Performance Computing 2022, 4 (1), 53–62. 
+]
+:::
+::::
+
+## Fundamentos da Mecânica Quântica
+![](img/Fudanmentos_QM.svg){width="750px" fig-align=center}
+
+## Qubit
+
+![](img/qubit.svg){width="600px" fig-align=center}
+
+## Algoritmos Quânticos 
+
+:::{style="text-align:center;font-size:20px;"}
+
+![](img/digital_quantum.jpg){width="650px"}
+
+Fonte: Fingerhuth, Babej e Wittek 
+[-@Fingerhuth_2018].
+
+
+
+![](img/algoritmo_quantico.jpg){width="900px" fig-align="center"}
+
+Fonte: Adaptado de @whurley_quantum_2023.^[QFT: Quantum Fourier transform; VQE: Variational quantum eigensolver; QAOA: Quantum approximate optimization
+algorithm; QW: Quantum Walks]
+:::
+
+
+
+
+
+
+
+## Framework
+
+
+:::{.panel-tabset}
+### Qiskit
+
+
+
+
+![Link: <https://www.ibm.com/quantum/qiskit>](img/qiskit.png){width=1000px fig-align=center}
+
+
+- Instalação (Verifique se tem o python 3 e o pip instalados)
+
+```{.python .code-overflow-wrap style="font-size:35px;"}
+pip install qiskit-ibm-runtime # Permite o acesso das maquinas do IBM Q
+pip install qiskit[visualization] # instala todos pacotes necessarios
+```
+:::
+
+
+
+
+
+
+## IBM Quantum Platafom
+
+
+![](img/ibm_composer.png){width=1000px fig-align=center}
+
+
+
+## Chip Quântico
+
+
+::: {layout-ncol=2}
+![](img/QPU_Kyoto.png){width=750px fig-align=center}
+
+![](img/rede_qubit.png){width=750px fig-align=center}
+:::
+
+## Portas Quânticas
+
+![](img/portas.svg){height=800px fig-align=center}
+
+
+## Exemplo: Superposição para 1 Qubit
+### Abordagem Algébrica
+
+- Incialmente, em  circuito quântico, cada qubit está no estado $|0\rangle$. Então, para nosso circuito, o estado final do qubit é $|\psi\rangle =|0\rangle$.
+
+- A aplicação da porta de Hadammard sobrepõe o estado incial. Lembrando que $H=\dfrac{1}{\sqrt{2}}\begin{pmatrix}1&1\\1&-1\end{pmatrix}$, então
+
+$$|\psi\rangle =H|0\rangle =\dfrac{1}{\sqrt{2}}\begin{pmatrix}1&1\\
+1&-1\end{pmatrix}\cdot\begin{pmatrix}1\\
+0\end{pmatrix}=\begin{pmatrix}\frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}}\end{pmatrix} $$
+$$|\psi\rangle =\begin{pmatrix}\frac{1}{\sqrt{2}}\\
+0\end{pmatrix}+\begin{pmatrix}0\\
+\frac{1}{\sqrt{2}}\end{pmatrix} \rightarrow  \boxed{|\psi\rangle =\dfrac{1}{\sqrt{2}}(|0\rangle +|1\rangle)}$$
+
+- Também podemos determinar o mesmo estado final do qubit, utilizando os ângulos de rotação $\theta$ e $\varphi$  da esfera de Bloch. Então com a expressão $|\psi\rangle =\cos\left(\frac{\theta}{2}\right)|0\rangle +e^{\varphi i}\sin\left(\frac{\theta}{2}\right)|1\rangle$, o resultado é obtido quando $\theta =\frac{\pi}{2}$ e $\varphi =0$.
+
+- A probabilidade de obter o estado $|0\rangle$ será $P_0=|\langle 0|\psi\rangle|^2=\left|\frac{1}{\sqrt{2}}(\langle 0|0\rangle+\langle 0|1\rangle)\right|^2=0,5$
+
+- A probabilidade de obter o estado $|1\rangle$ será $P_1=|\langle 1|\psi\rangle|^2=0,5$.
+
+## Exemplo: Superposição para 1 Qubit
+### Implementação
+
+:::{.columns}
+:::{.column with=50%}
+```{.python .code-overflow-wrap style="font-size:35px;"}
+from qiskit import*
+
+# Criando os registradores  
+qubits = QuantumRegister(1)
+clbits = ClassicalRegister(1)
+
+# Criando o Circuito Quantico
+qc = QuantumCircuit(qubits, clbits)
+
+# Adiciona portas Hadamard 
+qc.h(qubits[0])  
+
+# Medição
+qc.measure(qubits, clbits)
+
+%matplotlib inline 
+qc.draw('mpl')
+```
+![](img/hada.png){width=300px fig-align=center}
+
+:::
+:::{.column with=50%}
+
+:::{.panel-tabset}
+### Medidas
+```{.python .code-overflow-wrap style="font-size:35px;"}
+# Determinar o backend a ser usado, que poder ser um simulador ou um chip real
+# Neste caso escolhemos o simulador qasm_simulator
+simulador = Aer.get_backend('qasm_simulator')
+n_medidas=8192 # número de medidas para estimativa de uma distribuição de probabilidades
+resultado=execute(qc,simulador,shots=n_medidas).result() # executa o circuito qc no backend escolhido e retorna o resultado
+```
+:::{.panel-tabset}
+#### Contagem
+```{.python .code-overflow-wrap style="font-size:35px;"}
+from qiskit.tools.visualization import plot_histogram
+contagem=resultado.get_counts(qc)
+plot_histogram(contagem)
+```
+
+![](img/count_had.png){width="470px" fig-align="center"}
+
+#### Probabilidade
+```{.python .code-overflow-wrap style="font-size:35px;"}
+from qiskit.tools.visualization import plot_distribution
+contagem=resultado.get_counts(qc)
+plot_distribution(contagem)
+```
+![](img/prob_had.png){width="470px" fig-align="center"}
+:::
+
+### Esfera de Bloch
+```{.python .code-overflow-wrap style="font-size:35px;"}
+from qiskit.visualization import plot_state_city, plot_bloch_multivector
+
+from qiskit.quantum_info import Statevector
+psi=Statevector(qc)
+
+plot_bloch_multivector(psi)
+
+```
+
+![](img/bloch_hada.png){width="470px" fig-align="center"}
+:::
+:::
+:::
+
+## Exemplo: Emaranhamento - Estados de Bell
+### Abordagem Algébrica
+- Para $x,y \in \{0,1\}$
+
+|Entrada|Saída|
+|:-------:|:-----:|
+| $|xy\rangle$ | $\scriptsize |\beta_{xy}\rangle=\dfrac{|0y\rangle+(-1)^{x}|1\bar{y}\rangle}{\sqrt{2}}$
+| 
+
+- Para emaranhar estados utiliza-se a porta CNOT. Assim, para  entrada $|00\rangle=|0\rangle\otimes|0\rangle$,  o primeiro qubit será o de controle. Para ativar a porta X devemos aplicar a porta H no primeiro qubit,
+
+$$\scriptsize H|00\rangle=\dfrac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}\otimes\begin{pmatrix}1\\0\end{pmatrix}=\dfrac{1}{\sqrt{2}}\begin{pmatrix}1(1)\\1(0)\\1(1)\\1(0)\end{pmatrix}=\dfrac{1}{\sqrt{2}}\begin{pmatrix}1\\0\\1\\0\end{pmatrix}$$
+
+- Aplicando a porta CNOT
+
+$$\scriptsize |\beta_{00}\rangle=CNOT(H|00\rangle)=\begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}\dfrac{1}{\sqrt{2}}\begin{pmatrix}1\\0\\1\\0\end{pmatrix} =\dfrac{1}{\sqrt{2}}\left[\begin{pmatrix}1\\0\\0\\0\end{pmatrix}+\begin{pmatrix}0\\0\\0\\1\end{pmatrix}\right]\rightarrow\boxed{|\beta_{00}\rangle=\dfrac{1}{\sqrt{2}}(|00\rangle+|11\rangle)}$$
+
+
+## Exemplo: Emaranhamento - Estados de Bell
+### Implementação
+:::{.columns}
+:::{.column width=50%}
+```{.python .code-overflow-wrap style="font-size:35px;"}
+from qiskit import *
+from qiskit.visualization import plot_histogram, plot_distribution
+# circuito somente com as protas quanticas
+circuito1 = QuantumCircuit(2, 2)
+circuito1.h(0)
+circuito1.cx(0, 1)
+
+# circuto somente com as medicoes
+medicoes = QuantumCircuit(2, 2)
+medicoes.measure([0,1], [0,1]) # pode-se usar measure(range(2),range(2))
+
+simulador = BasicAer.get_backend('qasm_simulator') # executa o simulador
+circuito_completo = circuito1.compose(medicoes)
+result = simulador.run(circuito_completo, shots=1000).result()
+counts  = result.get_counts(circuito_completo)
+
+# Executo pela segunda vez medindo 1024 vezes
+second_result = simulador.run(circuito_completo, shots=1024).result()
+second_counts  = second_result.get_counts(circuito_completo)
+```
+![](img/bell00.png){width=400px fig-align=center}
+:::
+:::{.column width=50%}
+
+:::{.panel-tabset}
+### Medições
+:::{.panel-tabset}
+#### Contagens
+```{.python .code-overflow-wrap style="font-size:30px;"}
+legend = ['Primeira Execucao', 'Segunda Execucao']
+plot_histogram([counts, second_counts], legend=legend)
+```
+![](img/grafico_contagens.png){width=600px fig-align=center}
+
+#### Probabilidade 
+```{.python .code-overflow-wrap style="font-size:30px;"}
+legend = ['Primeira Execucao', 'Segunda Execucao']
+plot_distribution([counts, second_counts], legend=legend)
+```
+![](img/grafico_prob.png){width=600px fig-align=center}
+:::
+### Esfera de Bloch
+```{.python .code-overflow-wrap style="font-size:30px;"}
+from qiskit.quantum_info import Statevector
+from qiskit.visualization import plot_state_qsphere
+
+state = Statevector(circuito1)
+plot_state_qsphere(state)
+```
+
+![](img/bloch_bell.png){width=500px fig-align=center}
+:::
+:::
+:::
+
+
+## Condicionais
+
+:::{.columns}
+:::{.column width=50%}
+### If-else
+```{.python .code-overflow-wrap style="font-size:35px;"}
+from qiskit import *
+
+qubits = QuantumRegister(2)
+clbits = ClassicalRegister(2)
+circuit = QuantumCircuit(qubits, clbits)
+(q0, q1) = qubits
+(c0, c1) = clbits
+ 
+circuit.h(q0)
+circuit.measure(q0, c0)
+with circuit.if_test((c0, 1)) as else_: # se a medida no primeiro qubit for 1
+    circuit.h(q1) # aplica-se a porta de hadamard no segundo qubit
+with else_: # caso contrário
+    circuit.x(q1) # aplica-se a porta de Pauli X
+circuit.measure(q1, c1)
+ 
+circuit.draw("mpl")
+```
+
+
+![](img/if_else.png){width=650px fig-align=center}
+
+:::
+
+:::{.column width=50%}
+### Case
+
+```{.python .code-overflow-wrap style="font-size:35px;"}
+from qiskit import *
+
+qubits = QuantumRegister(1)
+clbits = ClassicalRegister(1)
+circuit = QuantumCircuit(qubits, clbits)
+(q0,) = qubits
+(c0,) = clbits
+ 
+circuit.h(q0)
+circuit.measure(q0, c0)
+with circuit.switch(c0) as case: # seleciona as acoes no bit classico
+    with case(0): # caso 0
+        circuit.x(q0)
+    with case(1): # caso 1
+        circuit.z(q0)
+circuit.measure(q0, c0)
+circuit.draw("mpl")
+
+```
+![](img/case.png){width=800px fig-align=center}
+:::
+:::
+
+
+## Loops
+
+:::{.columns}
+:::{.column width=50%}
+### For
+
+```{.python .code-overflow-wrap style="font-size:40px;"}
+from qiskit import *
+
+qubits = QuantumRegister(1)
+clbits = ClassicalRegister(1)
+circuit = QuantumCircuit(qubits, clbits)
+(q0,) = qubits
+(c0,) = clbits
+ 
+with circuit.for_loop(range(5)) as _:
+    circuit.x(q0)
+circuit.measure(q0, c0)
+ 
+circuit.draw("mpl")
+
+```
+![](img/for.png){width=600px fig-align=center}
+:::
+
+:::{.column width=50%}
+
+### While
+
+```{.python .code-overflow-wrap style="font-size:30px;"}
+from qiskit import *
+
+qubits = QuantumRegister(2)
+clbits = ClassicalRegister(2)
+circuit = QuantumCircuit(qubits, clbits)
+ 
+q0, q1 = qubits
+c0, c1 = clbits
+ 
+circuit.h([q0, q1])
+circuit.measure(q0, c0)
+circuit.measure(q1, c1)
+# repete enquanto o resultado medidacao dos dois qubits forem 1
+with circuit.while_loop((clbits, 0b11)):
+    circuit.h([q0, q1])
+    circuit.measure(q0, c0)
+    circuit.measure(q1, c1)
+ 
+circuit.draw("mpl")
+
+```
+![](img/while.png){width=700px fig-align=center}
+:::
+:::
+---
+nocite: |
+  @Feynman_1982, @deutsch1985,@Fingerhuth_2018,@Understanding2023,@weaverQiskitPocketGuide2022,@rieffelQuantumComputingGentle2014,@nielsenQuantumComputationQuantum2000,@kayeIntroductionQuantumComputing2007,@IBM
+---
+
+## Referências
+
+::: {#refs style="margin-left:30px; margin-right:30px;"}
+:::
+
+
+

@@ -1,0 +1,61 @@
+---
+title: Algoritmos Quânticos []{.universidade} []{.programa}
+subtitle: "**Disciplina:** Tópicos Especiais em Computação II"
+institute:
+    - Universidade Federal do Amazonas
+    - Pró-Reitoria de Pesquisa e Pós-Graduação
+    - Programa de Pós-Graduação em Informática
+
+author:
+    - "Profª: Dra. Rosiane de Freitas Rodrigues<br>[(rosiane@icomp.ufam.edu.br)](rosiane@icomp.ufam.edu.br)<br><br> Estágio em Docência II: Geyson Maquiné Batalha<br> [(geyson.batalha@icomp.ufam.edu.br)](geyson.batalha@icomp.ufam.edu.br)"
+
+bibliography: ref.bib
+csl: abnt.csl
+format: 
+    revealjs:
+        slide-number: c/t
+        theme: [tema.scss]
+        width: 1600
+        height: 900
+        fig-cap-location: top
+        code-fold: true
+        margin: 0
+---
+
+## Computação Serial X Computação Paralela X Computação Quântica
+
+### Exemplo: Encontrar, dentre as 8 chaves, a chave que abra a fechadura
+
+- Computação Serial 
+
+![](img/serial.png){fig-align="center"}
+
+- Computação Paralela
+
+![](img/quntica.png){fig-align="center"}
+
+- Computação Quântica
+
+![](img/paralela.png){fig-align="center"}
+
+
+
+
+## Estrutura dos Algoritmos Quânticos
+![](img/modelo_algoritmo_quantico.jpg){height=300px fig-align="center"}
+
+:::{style="font-size:22px"}
+**Entradas:**
+
+**Entradas Ancilla:** Contém qubits ancilla são qubits adicionais que podem ser usados ​​para auxiliar na computação. Eles podem ser usados ​​para armazenar dados intermediários ou para realizar operações quânticas específicas.
+
+**Saídas:**
+
+**Saídas Lixo:** se refere a qubits que não são mais necessários para a computação e podem ser descartados.
+
+**Preparações dos Estados:**  envolve a inicialização dos qubits do computador quântico em um estado específico. Na computação quântica, os qubits podem estar em superposição de estados, o que significa que eles podem representar múltiplos valores simultaneamente. A preparação do estado define a superposição inicial dos qubits para a computação
+
+**Transformações:**  os qubits são manipulados por meio de operações quânticas específicas. Essas operações são análogas às operações matemáticas realizadas em bits em computadores clássicos, mas exploram as propriedades sds quânticas da matéria, como superposição e entrelaçamento, para realizar cálculos mais scomplexos.
+:::
+
+
